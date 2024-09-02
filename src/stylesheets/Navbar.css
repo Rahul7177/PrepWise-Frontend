@@ -1,0 +1,109 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-logo h1 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar-links li {
+    display: inline;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.logo_img
+{
+    width: 30px;
+    margin-left: 5px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle img {
+    width: 30px;
+    height: 30px;
+}
+
+.theme-toggle:hover {
+    color: #f12c00;
+}
+
+/* Light Theme */
+.navbar-light {
+    background-color: #F5F5F5;
+    color: #0f1428;
+}
+
+.navbar-logo a
+{
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+.navbar-light .navbar-links a {
+    color: #0f1428;
+}
+
+.navbar-light .navbar-links a:hover {
+    color: #f8623d;
+}
+
+/* Dark Theme */
+.navbar-dark {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+}
+
+.navbar-dark .navbar-links a {
+    color: #ECF0F1;
+}
+
+.navbar-dark .navbar-links a:hover {
+    color: #FF5733;
+}
+
+/* Body Themes */
+body.light-theme {
+    background-color: #F5F5F5;
+    color: #1d242c;
+}
+
+body.dark-theme {
+    background-color: #1d242c;
+    color: #ECF0F1;
+}
