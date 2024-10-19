@@ -1,18 +1,15 @@
-// src/components/Chatbot.js
-import React from 'react';
-import '../stylesheets/Chatbot.css'; // Import the CSS for styling
-import bot from '../assets/chatbot.png'
+import { Link } from 'react-router-dom';
+import '../stylesheets/Chatbot.css'; // Use the correct relative path to the CSS file
+
 
 const Chatbot = () => {
-    const handleClick = () => {
-        alert('Chatbot clicked!'); // Replace with your chatbot logic
-    };
-
-    return (
-        <div className="chatbot-icon" onClick={handleClick}>
-            <img src={bot} alt="Chatbot Icon" />
-        </div>
-    );
+  return (
+    <Link to="/forum">
+      <div className="chatbot-icon create-discussion">
+        <button className="discussion-btn">Create Discussion</button>
+      </div>
+    </Link>
+  );
 };
 
 export default Chatbot;

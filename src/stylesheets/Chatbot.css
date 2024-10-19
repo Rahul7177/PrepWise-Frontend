@@ -1,25 +1,77 @@
-/* src/stylesheets/Chatbot.css */
-.chatbot-icon {
+
+.create-discussion {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #007bff; /* Customize as needed */
-    border-radius: 50%;
+    width: auto;
+    height: auto;
+    background-color: #007bff; /* Customize button background */
+    border-radius: 10px; /* Button shape */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease;
-}
-
-.chatbot-icon:hover {
+  }
+  
+  .discussion-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .discussion-btn:hover {
     background-color: #0056b3; /* Darker shade on hover */
-}
-
-.chatbot-icon img {
-    width: 30px; /* Adjust icon size as needed */
-    height: 30px;
-}
+  }
+  
+  .forum-home {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .forum-home ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .forum-home ul li {
+    margin: 10px 0;
+  }
+  
+  .subject-forum {
+    padding: 20px;
+  }
+  
+  .new-thread {
+    margin-bottom: 20px;
+  }
+  
+  .new-thread input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+  }
+  
+  .new-thread button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  
+  .threads-list {
+    margin-top: 20px;
+  }
+  
+  .thread-item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
