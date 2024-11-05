@@ -1,0 +1,64 @@
+.discussion-forum {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#subject-filter {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.conversation-box {
+    height: 300px;
+    overflow-y: scroll;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #d1e7ff;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #f0e68c;
+    text-align: left;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-box input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.input-box button {
+    width: 18%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-box button:hover {
+    background-color: #0056b3;
+}

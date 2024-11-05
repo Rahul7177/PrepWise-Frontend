@@ -11,12 +11,12 @@ import Navbar from '../components/Navbar';
 import Chatbot from '../components/chatbot';
 
 const courses = [
-  { id: 1, name: 'C++ Programming', image: cImage },
+  { id: 1, name: 'Cryptography', image: cryptoImage },
   { id: 2, name: 'Data Structures and Algorithms', image: dsaImage },
   { id: 3, name: 'Calculus', image: calculusImage },
   { id: 4, name: 'DBMS', image: dbmsImage},
   { id: 5, name: 'Computer Networks', image: cnImage },
-  { id: 6, name: 'Cryptography', image: cryptoImage },
+  { id: 6, name: 'C++ Programming', image: cImage},
 
 ];
 

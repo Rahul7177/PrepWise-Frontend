@@ -1,18 +1,31 @@
-// src/components/Chatbot.js
-import React from 'react';
-import '../stylesheets/Chatbot.css'; // Import the CSS for styling
+import React, { useState } from 'react';
 import bot from '../assets/chatbot.png'
+import '../stylesheets/Chatbot.css'; // Add appropriate styles
+import DiscussionForum from './DiscussionForum';
 
 const Chatbot = () => {
-    const handleClick = () => {
-        alert('Chatbot clicked!'); // Replace with your chatbot logic
+    const [openForum, setOpenForum] = useState(false);
+
+    const toggleForum = () => {
+        setOpenForum(!openForum);
     };
 
     return (
-        <div className="chatbot-icon" onClick={handleClick}>
-            <img src={bot} alt="Chatbot Icon" />
-        </div>
+        <>
+            {/* Chatbot Icon */}
+            <div className="chatbot-icon" onClick={toggleForum}>
+                <img src={bot} alt="Chatbot" />
+            </div>
+
+            {/* Discussion Forum */}
+            {openForum && (
+                <div className="discussion-forum">
+                    <DiscussionForum />
+                </div>
+            )}
+        </>
     );
 };
 
 export default Chatbot;
+

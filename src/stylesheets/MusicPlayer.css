@@ -1,0 +1,108 @@
+.music-player-icon {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background-color: #006fe6; /* Icon background color */
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.music-player-icon:hover {
+    background-color: #004494; /* Darker blue on hover */
+}
+
+.music-player-dialog {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: #1e1e1e; /* Dark background for the dialog */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Increased width for a more spacious layout */
+    z-index: 1000;
+    color: white; /* White text color */
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4e4e4e; /* Light border */
+    padding-bottom: 10px;
+}
+
+.dialog-header h3 {
+    margin: 0;
+    font-size: 1.5rem; /* Larger header size */
+    color: #ff6f20; /* Orange header color */
+}
+
+.dialog-header button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #d9534f; /* Close button color */
+}
+
+.song-info {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.song-info p {
+    margin: 5px 0;
+    font-size: 1rem; /* Adjusted size for readability */
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.controls button {
+    background-color: #ff6f20; /* Orange button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; /* Padding for a better click area */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #ff8c40; /* Lighter orange on hover */
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.volume-control label {
+    margin-right: 10px;
+    font-size: 0.9rem; /* Smaller label size */
+    color: #bbb; /* Lighter color for volume label */
+}
+
+.volume-control input {
+    width: 100%; /* Full width for the volume slider */
+}
+
+.seekbar {
+    width: 100%;
+    margin: 10px 0;
+    cursor: pointer; /* Change cursor to pointer */
+}

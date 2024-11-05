@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 :root {
     --secondary: #121c25;
     --primary: #ffffff;
@@ -9,4 +10,6 @@ html,body
     /* font-size: 62.5%; */
     width: 100%;
     box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
 }
