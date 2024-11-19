@@ -1,0 +1,101 @@
+/* Main Progress Container */
+.progress-container {
+    /* background-color: #; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height:100vh ;
+    padding: 2rem;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    text-align: center;
+}
+
+.progress-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Progress List - Flexbox to handle dynamic card layout */
+.progress-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual Course Card */
+.progress-course-card {
+    display: flex;
+    min-width: 100%;
+    width: fit-content;
+    flex-direction: column;
+    height: fit-content;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.progress-course-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0f1428;
+}
+
+.progress-course-title
+{
+    /* text-transform: uppercase; */
+    color: #ff5500;
+    font-size: 1.5rem;
+}
+/* Module Progress Container */
+.module-progress {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.module-progress p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    margin-top: 1rem;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #0d9b00;
+    background-image: linear-gradient(#00aa1a,#3aff20);
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Time Spent */
+.module-progress .time-spent {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Error Message when No Data Found */
+.progress-container p {
+    color: #0f1428;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

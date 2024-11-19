@@ -17,8 +17,8 @@ const courses = [
   { id: 4, name: 'DBMS', image: dbmsImage},
   { id: 5, name: 'Computer Networks', image: cnImage },
   { id: 6, name: 'C++ Programming', image: cImage},
-
 ];
+
 
 const Courses = () => {
   return (

@@ -13,8 +13,8 @@ const CourseCard = ({ name, image }) => {
     return (
         <div className="course-card-container" onClick={handleClick} style={{ cursor: 'pointer' }}>
             <div className="course-card" style={{ backgroundImage: `url(${image})` }}>
-                <div className="course-overlay">
-                    <h2>{name}</h2>
+                <div className="card-overlay">
+                    <h2 className='card-overlay-title'>{name}</h2>
                 </div>
             </div>
             <div className="course-title">

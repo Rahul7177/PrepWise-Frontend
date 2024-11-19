@@ -5,43 +5,25 @@ const DiscussionForum = () => {
     const [selectedSubject, setSelectedSubject] = useState('All');
     const [userInput, setUserInput] = useState('');
     const [conversations, setConversations] = useState({
-        'All': [
-            { id: 1, sender: 'User', subject: 'Cryptography', message: 'What is encryption?' },
-            { id: 2, sender: 'Bot', subject: 'Cryptography', message: 'Encryption is the process of encoding information to protect it from unauthorized access.' },
-            { id: 3, sender: 'User', subject: 'Calculus', message: 'What is the derivative of a function?' },
-            { id: 4, sender: 'Bot', subject: 'Calculus', message: 'The derivative represents the rate of change of a function with respect to a variable.' },
-            { id: 5, sender: 'User', subject: 'DSA', message: 'What is a linked list?' },
-            { id: 6, sender: 'Bot', subject: 'DSA', message: 'A linked list is a linear data structure where elements are stored in nodes.' }
-        ],
-        'Cryptography': [
-            { id: 1, sender: 'User', message: 'What is encryption?' },
-            { id: 2, sender: 'Bot', message: 'Encryption is the process of encoding information to protect it from unauthorized access.' }
-        ],
-        'Calculus': [
-            { id: 1, sender: 'User', message: 'What is the derivative of a function?' },
-            { id: 2, sender: 'Bot', message: 'The derivative represents the rate of change of a function with respect to a variable.' }
-        ],
-        'DSA': [
-            { id: 1, sender: 'User', message: 'What is a linked list?' },
-            { id: 2, sender: 'Bot', message: 'A linked list is a linear data structure where elements are stored in nodes.' }
-        ],
+        'All': [],
+        'Cryptography': [],
+        'Calculus': [],
+        'DSA': []
     });
+    const [loading, setLoading] = useState(false); // For loading indicator
 
-    // Handle subject selection
     const handleSubjectChange = (event) => {
         setSelectedSubject(event.target.value);
     };
 
-    // Handle user input change
     const handleInputChange = (event) => {
         setUserInput(event.target.value);
     };
 
-    // Handle submitting a new message
-    const handleSendMessage = () => {
+    const handleSendMessage = async () => {
         if (userInput.trim() !== '') {
             const newMessage = {
-                id: conversations[selectedSubject].length + 1,
+                id: conversations[selectedSubject].length + 1, // Using the conversation length for id
                 sender: 'User',
                 message: userInput,
             };
@@ -54,6 +36,37 @@ const DiscussionForum = () => {
 
             // Clear the input field
             setUserInput('');
+
+            setLoading(true);
+
+            try {
+                const aiResponse = await fetch('http://localhost:5000/api/ask-openai', {  // Backend endpoint updated
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: userInput,  // Pass the user input to the AI
+                    }),
+                });
+
+                const data = await aiResponse.json();
+
+                const botMessage = {
+                    id: conversations[selectedSubject].length + 2, // Incrementing id for bot message
+                    sender: 'Bot',
+                    message: data.answer, // AI's response
+                };
+
+                setConversations(prevConversations => ({
+                    ...prevConversations,
+                    [selectedSubject]: [...prevConversations[selectedSubject], botMessage]
+                }));
+            } catch (error) {
+                console.error("Error with AI request:", error);
+            }
+
+            setLoading(false);
         }
     };
 
@@ -77,6 +90,7 @@ const DiscussionForum = () => {
                         <strong>{conv.sender}:</strong> {conv.message}
                     </div>
                 ))}
+                {loading && <div>Loading response...</div>}
             </div>
 
             {/* Input for new messages */}

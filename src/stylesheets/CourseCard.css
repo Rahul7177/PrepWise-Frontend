@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 
-.course-overlay {
+.card-overlay {
     background: rgba(0, 0, 0, 0.8);
     color: #ECF0F1; /* Text color for readability */
     padding: 1rem;
@@ -37,7 +37,7 @@
     transition: transform 0.3s ease;
 }
 
-.course-card:hover .course-overlay {
+.course-card:hover .card-overlay {
     transform: translateY(0);
 }
 
@@ -49,5 +49,11 @@
 .course-title h3 {
     margin: 0;
     font-size: 1rem;
-    color: #2C3E50; /* Title color */
+    color: #2C3E50; 
+}
+
+.card-overlay-title
+{
+    color: #ffff;
+    font-size: 1rem;
 }
