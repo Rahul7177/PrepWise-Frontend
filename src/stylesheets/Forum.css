@@ -1,28 +1,36 @@
-.forum-container
-{
+/* General Container for the Forum */
+.forum-container {
     display: flex;
     justify-content: center;
     width: 100%;
     min-height: 100vh;
     background-color: #ffff;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Forum Main Section */
 .forum {
-    width: 60%;
-    /* margin: 100px; */
+    width: 100%;
+    max-width: 800px; /* Limits width on larger screens */
     padding: 20px;
     background-color: #ffff;
     color: #333;
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Title of the Forum */
 .forum h1 {
     text-align: center;
     color: #ff5500;
     margin-bottom: 20px;
+    font-size: 2rem;
 }
 
+/* Filters Section (Subject Selection) */
 .forum-filters {
     display: flex;
     justify-content: center;
@@ -30,13 +38,21 @@
     margin-bottom: 20px;
 }
 
-.forum-filters select {
-    margin-left: 10px;
-    padding: 5px;
-    border: 1px solid #ff5500;
-    border-radius: 5px;
+.forum-filters label {
+    font-weight: bold;
+    margin-right: 10px;
 }
 
+.forum-filters select {
+    margin-left: 10px;
+    padding: 8px;
+    border: 1px solid #ff5500;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 150px;
+}
+
+/* Doubt List Section */
 .doubt-list {
     max-height: 400px;
     overflow-y: auto;
@@ -53,31 +69,101 @@
 }
 
 .doubt-subject {
-    font-size: 0.8em;
-    color: black;
+    font-size: 0.9em;
+    color: #555;
 }
 
+/* Doubt Form Section */
 .doubt-form textarea {
     width: 100%;
-    height: 100px;
+    height: 120px;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ff5500;
     border-radius: 5px;
     resize: none;
+    font-size: 1rem;
 }
 
 .doubt-form button {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #ff5500;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 .doubt-form button:hover {
-    background-color: dark#ff5500;
+    background-color: darkorange;
+}
+
+/* Responsive Styles */
+
+/* Medium devices (Tablets) */
+@media (max-width: 768px) {
+    .forum {
+        width: 90%; /* Full width with some margin */
+        padding: 15px;
+    }
+
+    .forum h1 {
+        font-size: 1.8rem;
+    }
+
+    .forum-filters select {
+        width: 130px;
+    }
+
+    .doubt-form textarea {
+        height: 100px;
+    }
+
+    .doubt-form button {
+        padding: 10px;
+    }
+}
+
+/* Small devices (Mobile Phones) */
+@media (max-width: 480px) {
+    .forum {
+        width: 100%; /* Take full width on mobile */
+        padding: 10px;
+    }
+
+    .forum h1 {
+        font-size: 1.5rem;
+    }
+
+    .forum-filters select {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .doubt-form textarea {
+        height: 80px;
+    }
+
+    .doubt-form button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* Extra Small Devices (Portrait Mobile Phones) */
+@media (max-width: 320px) {
+    .forum h1 {
+        font-size: 1.2rem;
+    }
+
+    .doubt-form textarea {
+        height: 70px;
+    }
+
+    .doubt-form button {
+        padding: 10px;
+    }
 }
