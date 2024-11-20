@@ -19,7 +19,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color:#dadada8e;
+    background-color:#ffffff9f;
 }
 
 .navbar-logo h1 {
@@ -54,10 +54,16 @@ body {
     color: #f8623d;
 }
 
+.navbar-logo a
+{
+    text-decoration: none;
+}
+
 /* Logo styling */
 .logo_img {
     width: 30px;
     margin-left: 5px;
+    margin-bottom: 15px;
 }
 
 

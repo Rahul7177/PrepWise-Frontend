@@ -8,13 +8,12 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission logic here (e.g., send message to an API)
         alert('Your message has been sent!');
     };
 
     return (
         <div className="contact-container" id='contact'>
-            <h2>Contact Us</h2>
+            <h2 className='contact-title'>Contact Us</h2>
             <div className="contact-cards">
                 <div className="contact-card">
                     <h3>Address</h3>

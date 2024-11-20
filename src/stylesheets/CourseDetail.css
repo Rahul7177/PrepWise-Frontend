@@ -7,6 +7,7 @@
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   line-height: 1.6;
+  background-color: #fff8f0;
 }
 
 .course-detail-h1 {
@@ -19,7 +20,7 @@
 
 /* Module Card */
 .module-card {
-  background: #f0f4f8;
+  background: #ffff;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 10px;
@@ -138,8 +139,8 @@
 
 /* Tab Buttons */
 .tab-button {
-  background-color: #5bc0de;
-  color: #333;
+  background-color: #FF5733;
+  color: #fff;
   border: none;
   padding: 10px 15px;
   font-size: 1rem;

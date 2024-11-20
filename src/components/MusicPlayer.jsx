@@ -4,7 +4,6 @@ import Song1 from '../assets/music/Chime.mp3';
 import Song2 from '../assets/music/Springs.mp3';
 import Song3 from '../assets/music/Yanvince.mp3';
 
-// Sample songs data
 const songs = [
     { title: 'Chime', artist: 'Win and Loose [NCS Release]', audioSrc: Song1 },
     { title: 'Springs', artist: 'Magnetic [NCS Release]', audioSrc: Song2 },
@@ -14,33 +13,32 @@ const songs = [
 const MusicPlayer = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
-    const [volume, setVolume] = useState(50); // Volume from 0 to 100
-    const [currentSongIndex, setCurrentSongIndex] = useState(0); // Track the current song
-    const [currentTime, setCurrentTime] = useState(0); // Current playback time
-    const [duration, setDuration] = useState(0); // Duration of the current song
+    const [volume, setVolume] = useState(50); 
+    const [currentSongIndex, setCurrentSongIndex] = useState(0); 
+    const [currentTime, setCurrentTime] = useState(0); 
+    const [duration, setDuration] = useState(0);
 
     const audioRef = useRef(new Audio(songs[currentSongIndex].audioSrc));
 
-    // Update audio source whenever the current song changes
+    
     useEffect(() => {
         audioRef.current.pause();
         audioRef.current = new Audio(songs[currentSongIndex].audioSrc);
-        audioRef.current.volume = volume / 100; // Set volume
+        audioRef.current.volume = volume / 100; // Set volume when song changes
         audioRef.current.addEventListener('timeupdate', updateCurrentTime);
         audioRef.current.addEventListener('loadedmetadata', updateDuration);
-        
+    
         if (isPlaying) {
-            audioRef.current.play();
+            audioRef.current.play(); // Auto-play the new song if isPlaying is true
         }
-
-        // Clean up audio on component unmount
+    
         return () => {
             audioRef.current.pause();
             audioRef.current.removeEventListener('timeupdate', updateCurrentTime);
             audioRef.current.removeEventListener('loadedmetadata', updateDuration);
         };
-    }, [currentSongIndex]);
-
+    }, [currentSongIndex, isPlaying, volume]);
+    
     const updateCurrentTime = () => {
         setCurrentTime(audioRef.current.currentTime);
     };
@@ -65,22 +63,22 @@ const MusicPlayer = () => {
     const handleVolumeChange = (e) => {
         const newVolume = e.target.value;
         setVolume(newVolume);
-        audioRef.current.volume = newVolume / 100; // Update audio volume
+        audioRef.current.volume = newVolume / 100; 
     };
 
     const handleNext = () => {
         setCurrentSongIndex((prevIndex) => (prevIndex + 1) % songs.length);
-        setIsPlaying(true); // Automatically play next song
+        setIsPlaying(true); 
     };
 
     const handlePrev = () => {
         setCurrentSongIndex((prevIndex) => (prevIndex - 1 + songs.length) % songs.length);
-        setIsPlaying(true); // Automatically play previous song
+        setIsPlaying(true); 
     };
 
     const handleSeek = (e) => {
         const seekTime = e.target.value;
-        audioRef.current.currentTime = seekTime; // Seek to the selected time
+        audioRef.current.currentTime = seekTime; 
         setCurrentTime(seekTime);
     };
 
@@ -135,7 +133,6 @@ const MusicPlayer = () => {
     );
 };
 
-// Helper function to format time in minutes and seconds
 const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);

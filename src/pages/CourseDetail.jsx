@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Chatbot from '../components/chatbot';
@@ -6,8 +6,7 @@ import MusicPlayer from '../components/MusicPlayer';
 import '../stylesheets/CourseDetail.css';
 import { firestoreDb } from '../firebase';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
-import { useAuth } from '../context/AuthContext'; // Import the useAuth hook
-
+import { useAuth } from '../context/AuthContext'; 
 import cryptographyModules from '../courseData/Cryptography';
 import dataStructuresModules from '../courseData/DataStructures';
 import calculusModules from '../courseData/Calculus';
@@ -35,7 +34,6 @@ const CourseDetail = () => {
     const modules = subjectModules[courseName] || [];
     const INTERVAL_MS = 1000;
 
-    // Fetch saved progress and timeSpent from Firestore
     useEffect(() => {
         const fetchProgress = async () => {
             if (!currentUser) return;
@@ -51,8 +49,8 @@ const CourseDetail = () => {
         fetchProgress();
     }, [courseName, currentUser]);
 
-    // Save progress and timeSpent to Firestore
-    const saveProgress = async () => {
+    
+    const saveProgress = useCallback(async () => {
         if (!currentUser) return;
 
         try {
@@ -61,7 +59,13 @@ const CourseDetail = () => {
         } catch (error) {
             console.error("Error saving progress:", error);
         }
-    };
+    }, [currentUser, courseName, progress, timeSpent]);
+
+    useEffect(() => {
+        if (Object.keys(progress).length > 0 || Object.keys(timeSpent).length > 0) {
+            saveProgress();
+        }
+    }, [progress, timeSpent, saveProgress]);
 
     useEffect(() => {
         if (Object.keys(progress).length > 0 || Object.keys(timeSpent).length > 0) {
@@ -69,7 +73,7 @@ const CourseDetail = () => {
         }
     }, [progress, timeSpent]);
 
-    // Track time spent on the active module
+    
     useEffect(() => {
         if (!activeModule) return;
 

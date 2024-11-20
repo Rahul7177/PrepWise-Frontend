@@ -6,22 +6,21 @@ export const ProgressProvider = ({ children }) => {
     const [progressData, setProgressData] = useState({});
     const [timeSpentData, setTimeSpentData] = useState({});
 
-    // Function to get progress for a specific module
     const getModuleProgress = (courseId, moduleId) => {
-        return progressData[courseId]?.[moduleId] || 0;  // Default to 0 if no progress found
+        return progressData[courseId]?.[moduleId] || 0;  
     };
 
-    // Function to get time spent for a specific module
+    
     const getModuleTimeSpent = (courseId, moduleId) => {
-        return timeSpentData[courseId]?.[moduleId] || 0;  // Default to 0 if no time found
+        return timeSpentData[courseId]?.[moduleId] || 0; 
     };
 
-    // Context value to provide to components
+    
     const contextValue = {
         getModuleProgress,
         getModuleTimeSpent,
-        setProgressData,  // To allow updates to progressData
-        setTimeSpentData  // To allow updates to timeSpentData
+        setProgressData,  
+        setTimeSpentData  
     };
 
     return (

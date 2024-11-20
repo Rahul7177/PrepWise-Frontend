@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // Use AuthContext for user state
+import { useAuth } from '../context/AuthContext'; 
 import '../stylesheets/Navbar.css';
 import { auth } from '../firebase';
-import usericon from '../assets/user-icon.png'
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);

@@ -1,13 +1,12 @@
-// src/components/CourseCard.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate for routing
+import { useNavigate } from 'react-router-dom'; 
 import '../stylesheets/CourseCard.css';
 
 const CourseCard = ({ name, image }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/course/${name.toLowerCase()}`);  // Navigate to course detail page based on the course name
+        navigate(`/course/${name.toLowerCase()}`); 
     };
 
     return (

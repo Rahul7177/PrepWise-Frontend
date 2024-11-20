@@ -19,7 +19,7 @@ const SignUp = () => {
 
         try {
             await createUserWithEmailAndPassword(auth, email, password);
-            navigate('/'); // Redirect after successful sign-up
+            navigate('/'); 
         } catch (error) {
             const errorCode = error.code;
             if (errorCode === 'auth/email-already-in-use') {

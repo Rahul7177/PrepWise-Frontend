@@ -11,14 +11,17 @@ body {
 
 /* Contact Container */
 .contact-container {
-    width: 80%;
+    width: 100%;
+    padding: 25px;
     margin: 2rem auto;
     text-align: center;
+    background-color: #fff8f0;
 }
 
 .contact-container h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+    color: #FF5733;
 }
 
 /* Contact Cards */

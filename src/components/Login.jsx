@@ -1,8 +1,8 @@
 import React from 'react';
-import { auth } from '../firebase'; // Import the initialized auth instance
+import { auth } from '../firebase'; 
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useNavigate, Link } from 'react-router-dom';
-import '../stylesheets/Auth.css'; // Custom styles
+import '../stylesheets/Auth.css';
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -14,7 +14,7 @@ const SignIn = () => {
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            navigate('/'); // Redirect after successful login
+            navigate('/'); 
         } catch (error) {
             const errorCode = error.code;
             if (errorCode === 'auth/user-not-found') {
@@ -31,7 +31,7 @@ const SignIn = () => {
         const provider = new GoogleAuthProvider();
         try {
             await signInWithPopup(auth, provider);
-            navigate('/'); // Redirect after successful login
+            navigate('/'); 
         } catch (error) {
             alert('An error occurred with Google Sign-In. Please try again.');
         }

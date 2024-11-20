@@ -19,15 +19,15 @@ const About = () => {
             icon: '📊'
         },
         {
-            title: 'Expert Instructors',
-            description: 'Learn from industry experts and experienced instructors who guide you through every step.',
+            title: 'Solve Your Doubts',
+            description: 'Connect with your fellow peers and discuss your doubts. You can also use our personalised chatbot to solve your doubts.',
             icon: '👩‍🏫'
         }
     ];
 
     return (
         <div className="about-container" id='about'>
-            <h2>About Us</h2>
+            <h2 className='about-title'>About Us</h2>
             <p>Welcome to PrepWise! We provide a personalized and interactive learning experience to help you achieve your academic and career goals. Here's what makes us stand out:</p>
             <div className="features">
                 {features.map((feature, index) => (
