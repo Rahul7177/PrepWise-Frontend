@@ -27,12 +27,13 @@
     color: #555;
     margin-bottom: 2rem;
     text-align: center;
+    line-height: 1.6;
 }
 
 /* Features Section */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     justify-items: center;
 }
@@ -68,13 +69,15 @@
     color: #555;
 }
 
-/* Mobile View */
+/* Responsive Adjustments */
+
+/* Small screens (tablets and phones) */
 @media (max-width: 768px) {
     .about-container {
         padding: 1.5rem;
     }
 
-    h2 {
+    .about-title {
         font-size: 2rem;
     }
 
@@ -83,7 +86,7 @@
     }
 
     .features {
-        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
     }
 
     .feature-card {
@@ -95,6 +98,29 @@
     }
 
     .feature-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Extra small screens (<480px) */
+@media (max-width: 480px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+    }
+
+    .feature-card h3 {
         font-size: 1.2rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
     }
 }

@@ -30,8 +30,6 @@
 .progress-course-card {
     width: 100%;
     height: fit-content;
-    /* display: flex;
-    flex-direction: row; */
     background-color: #ffffff;
     padding: 25px;
     border-radius: 12px;
@@ -109,4 +107,109 @@
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 2rem;
+}
+
+/* Mobile View */
+@media (max-width: 1024px) {
+    .progress-container {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .progress-course-title {
+        font-size: 1.6rem;
+    }
+
+    .progress-course-card {
+        padding: 1.5rem;
+    }
+
+    .module-progress p {
+        font-size: 0.9rem;
+    }
+
+    .module-progress .time-spent {
+        font-size: 0.8rem;
+    }
+
+    .progress-bar-container {
+        height: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .progress-container {
+        padding: 1.5rem;
+        margin: 1rem; /* Adjust margin for mobile */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .progress-course-title {
+        font-size: 1.4rem;
+    }
+
+    .progress-course-card {
+        padding: 1.2rem;
+    }
+
+    .module-progress {
+        padding: 0.8rem;
+    }
+
+    .module-progress p {
+        font-size: 0.9rem;
+    }
+
+    .module-progress .time-spent {
+        font-size: 0.75rem;
+    }
+
+    .progress-bar-container {
+        height: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-container {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .progress-course-title {
+        font-size: 1.2rem;
+    }
+
+    .progress-course-card {
+        padding: 1rem;
+    }
+
+    .module-progress {
+        padding: 0.6rem;
+    }
+
+    .module-progress p {
+        font-size: 0.85rem;
+    }
+
+    .module-progress .time-spent {
+        font-size: 0.7rem;
+    }
+
+    .progress-bar-container {
+        height: 5px;
+    }
+
+    .progress-bar {
+        height: 100%;
+    }
 }

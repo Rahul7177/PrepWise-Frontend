@@ -9,6 +9,7 @@ import cnImage from '../assets/computer_networks.webp';
 import cryptoImage from '../assets/cryptography.webp'; 
 import Navbar from '../components/Navbar';
 import Chatbot from '../components/chatbot';
+import MusicPlayer from '../components/MusicPlayer'
 
 const courses = [
   { id: 1, name: 'Cryptography', image: cryptoImage },
@@ -24,6 +25,7 @@ const Courses = () => {
   return (
     <>
     <Navbar/>
+    <MusicPlayer/>
     <Chatbot/>
     <div className="courses-page">
       <h1>My Courses</h1>

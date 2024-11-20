@@ -96,9 +96,28 @@ h2 {
 }
 
 /* Mobile View */
+@media (max-width: 1024px) {
+    .account-container {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .update-password h3 {
+        font-size: 1.3rem;
+    }
+
+    .update-password input, .update-password button {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .account-container {
         padding: 1.5rem;
+        margin: 1rem; /* Reduce margin on mobile */
     }
 
     h2 {
@@ -109,7 +128,45 @@ h2 {
         font-size: 1.2rem;
     }
 
-    .update-password input, .update-password button {
+    .update-password input,
+    .update-password button {
         font-size: 1rem;
+    }
+
+    .account-details {
+        font-size: 1rem;
+    }
+
+    .account-details p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .account-container {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .update-password h3 {
+        font-size: 1.1rem;
+    }
+
+    .update-password input,
+    .update-password button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .account-details {
+        font-size: 0.9rem;
+    }
+
+    .account-details p {
+        font-size: 0.8rem;
     }
 }

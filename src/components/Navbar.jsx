@@ -6,6 +6,7 @@ import { auth } from '../firebase';
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
     const { currentUser } = useAuth();
 
     const toggleDropdown = () => {
@@ -22,6 +23,10 @@ const Navbar = () => {
         alert("Logged Out Successfully!");
     };
 
+    const toggleMenu = () => {
+        setMenuOpen((prev) => !prev);
+    };
+
     return (
         <nav className="navbar">
             <div className="navbar-logo">
@@ -36,31 +41,39 @@ const Navbar = () => {
                     </h1>
                 </Link>
             </div>
-            <ul className="navbar-links">
+            
+            <div className="hamburger" onClick={toggleMenu}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <ul className={`navbar-links ${menuOpen ? 'show' : ''}`}>
                 <li><Link to="/courses">Courses</Link></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><div className="user-dropdown">
-                <button className="user-icon" onClick={toggleDropdown}>
-                    Account
-                </button>
-                <div className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-                    {currentUser ? (
-                        <>
-                            <Link to="/account" onClick={closeDropdown}>My Account</Link>
-                            <Link to="/progress" onClick={closeDropdown}>My Progress</Link>
-                            <button onClick={handleLogout}>Logout</button>
-                        </>
-                    ) : (
-                        <Link to="/login" onClick={closeDropdown}>Login</Link>
-                    )}
-                </div>
-            </div></li>
+                <li><Link to="/forum">Forum</Link></li> {/* Added Forum Link */}
+                <li>
+                    <div className="user-dropdown">
+                        <button className="user-icon" onClick={toggleDropdown}>
+                            Account
+                        </button>
+                        <div className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+                            {currentUser ? (
+                                <>
+                                    <Link to="/account" onClick={closeDropdown}>My Account</Link>
+                                    <Link to="/progress" onClick={closeDropdown}>My Progress</Link>
+                                    <button onClick={handleLogout}>Logout</button>
+                                </>
+                            ) : (
+                                <Link to="/login" onClick={closeDropdown}>Login</Link>
+                            )}
+                        </div>
+                    </div>
+                </li>
             </ul>
-            
         </nav>
     );
 };
-
 
 export default Navbar;

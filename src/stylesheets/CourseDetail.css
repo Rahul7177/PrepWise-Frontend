@@ -54,22 +54,6 @@
   gap: 10px;
 }
 
-/* Notes Card */
-.note-card {
-  background: #fff;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.notes-title {
-  font-size: 1.8rem;
-  color: #5bc0de;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
 /* Notes Content Styling */
 .notes-content h3 {
   font-size: 1.5rem;
@@ -132,11 +116,6 @@
   line-height: 1.4;
 }
 
-/* Proper Spacing for Notes */
-.notes-card:not(:last-child) {
-  margin-bottom: 30px;
-}
-
 /* Tab Buttons */
 .tab-button {
   background-color: #FF5733;
@@ -180,6 +159,37 @@
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .course-detail-h1 {
+    font-size: 2.2rem;
+  }
+
+  .module-card {
+    padding: 15px;
+  }
+
+  .module-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .notes-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .notes-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .notes-content p, .note-list li {
+    font-size: 1rem;
+  }
+
+  .tab-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
   .course-detail-page {
     padding: 15px;
@@ -189,24 +199,129 @@
     font-size: 2rem;
   }
 
-  .note-title {
+  .module-card {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .module-header h2 {
     font-size: 1.6rem;
   }
 
-  .note-content h3 {
-    font-size: 1.4rem;
+  .notes-content h3 {
+    font-size: 1.3rem;
   }
 
-  .note-content h4 {
-    font-size: 1.2rem;
+  .notes-content h4 {
+    font-size: 1.1rem;
   }
 
-  .note-content p, .note-content ul li {
-    font-size: 1rem;
+  .notes-content p, .note-list li {
+    font-size: 0.95rem;
   }
 
   .tab-button {
-    padding: 8px 12px;
+    padding: 7px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-detail-page {
+    padding: 10px;
+  }
+
+  .course-detail-h1 {
+    font-size: 1.8rem;
+  }
+
+  .module-card {
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+
+  .module-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .notes-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .notes-content h4 {
+    font-size: 1rem;
+  }
+
+  .notes-content p, .note-list li {
     font-size: 0.9rem;
+  }
+
+  .tab-button {
+    padding: 6px 9px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .course-detail-h1 {
+    font-size: 1.6rem;
+  }
+
+  .module-card {
+    padding: 7px;
+    margin-bottom: 10px;
+  }
+
+  .module-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .notes-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .notes-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .notes-content p, .note-list li {
+    font-size: 0.85rem;
+  }
+
+  .tab-button {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .course-detail-h1 {
+    font-size: 1.5rem;
+  }
+
+  .module-card {
+    padding: 6px;
+    margin-bottom: 8px;
+  }
+
+  .module-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .notes-content h3 {
+    font-size: 1rem;
+  }
+
+  .notes-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .notes-content p, .note-list li {
+    font-size: 0.8rem;
+  }
+
+  .tab-button {
+    padding: 4px 7px;
+    font-size: 0.65rem;
   }
 }

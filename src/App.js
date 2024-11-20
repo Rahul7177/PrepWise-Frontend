@@ -24,6 +24,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import MyAccount from './pages/Account';
 import MyProgress from './pages/MyProgress';
+import Forum from './pages/Forum';
 
 // Course data
 const courses = [
@@ -42,12 +43,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/courses' element={<Courses />} />
-          {/* <Route path='/progress' element={<ProgressPage courses={courses} />} /> */}
           <Route path="/course/:courseName" element={<CourseDetail />} />
           <Route path='/login' element={<LoginPage/>} />
           <Route path='/signup' element={<SignupPage/>} />
           <Route path='/account' element={<MyAccount/>} />
           <Route path='/progress' element={<MyProgress/>} />
+          <Route path='/forum' element={<Forum/>} />
         </Routes>
       </BrowserRouter>
     </ProgressProvider>

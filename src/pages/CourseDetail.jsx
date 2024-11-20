@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Chatbot from '../components/chatbot';
@@ -6,7 +6,7 @@ import MusicPlayer from '../components/MusicPlayer';
 import '../stylesheets/CourseDetail.css';
 import { firestoreDb } from '../firebase';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
-import { useAuth } from '../context/AuthContext'; 
+import { useAuth } from '../context/AuthContext';
 import cryptographyModules from '../courseData/Cryptography';
 import dataStructuresModules from '../courseData/DataStructures';
 import calculusModules from '../courseData/Calculus';
@@ -49,7 +49,6 @@ const CourseDetail = () => {
         fetchProgress();
     }, [courseName, currentUser]);
 
-    
     const saveProgress = useCallback(async () => {
         if (!currentUser) return;
 
@@ -57,7 +56,7 @@ const CourseDetail = () => {
             const docRef = doc(firestoreDb, `users/${currentUser.uid}/progress`, courseName);
             await setDoc(docRef, { progress, timeSpent }, { merge: true });
         } catch (error) {
-            console.error("Error saving progress:", error);
+            console.error('Error saving progress:', error);
         }
     }, [currentUser, courseName, progress, timeSpent]);
 
@@ -67,13 +66,6 @@ const CourseDetail = () => {
         }
     }, [progress, timeSpent, saveProgress]);
 
-    useEffect(() => {
-        if (Object.keys(progress).length > 0 || Object.keys(timeSpent).length > 0) {
-            saveProgress();
-        }
-    }, [progress, timeSpent]);
-
-    
     useEffect(() => {
         if (!activeModule) return;
 
@@ -91,7 +83,7 @@ const CourseDetail = () => {
         const moduleElement = document.getElementById(`module-${moduleId}`);
         if (moduleElement) {
             const { scrollTop, scrollHeight, clientHeight } = moduleElement;
-            const percentage = Math.min(100, (scrollTop / (scrollHeight - clientHeight)) * 100);
+            const percentage = Math.min(100, ((scrollTop / (scrollHeight - clientHeight)) * 100).toFixed(2));
 
             setProgress((prev) => {
                 if ((prev[moduleId] || 0) < percentage) {
@@ -166,7 +158,7 @@ const CourseDetail = () => {
                                     </div>
                                 )}
                                 <progress value={progress[module.id] || 0} max="100" />
-                                <p>Progress: {Math.floor(progress[module.id] || 0)}%</p>
+                                <p>Progress: {(progress[module.id] || 0).toFixed(2)}%</p>
                                 <p>Time Spent: {Math.floor((timeSpent[module.id] || 0) / 60)} min</p>
                             </div>
                         ))}
